@@ -30,6 +30,7 @@ AI 编剧 Skill — 从主题/大纲生成完整结构化剧本（kais-movie-age
       "name": "string",
       "role": "protagonist|antagonist|supporting|extra",
       "description": "string — 简要描述",
+      "appearance_hint": "string — 详细外貌描述（为后续角色设计提供基础，包括：性别、年龄段、体型、发色/发型、眼色、肤色、标志性特征、服装风格，50-100字）",
       "personality": "string — 性格特征",
       "arc": "string — 角色弧线"
     }
@@ -98,6 +99,15 @@ AI 编剧 Skill — 从主题/大纲生成完整结构化剧本（kais-movie-age
 2. 角色之间要有冲突或互补关系
 3. 主角需要有清晰的弧线（开始→变化→结局）
 4. 角色数量精简，每个角色都有不可替代的作用
+5. ⚠️ 每个角色必须提供详细的外貌描述（appearance_hint），包括：
+   - 性别、大致年龄
+   - 发色、发型、头发长度
+   - 眼睛颜色
+   - 体型/身高范围
+   - 肤色
+   - 标志性特征（疤痕、配饰、特殊标记等）
+   - 服装风格/主色调
+   这些外貌描述将直接传递给角色设计器生成 feature_lock，确保跨场景一致性。
 
 输出 JSON 格式：
 {
@@ -106,6 +116,7 @@ AI 编剧 Skill — 从主题/大纲生成完整结构化剧本（kais-movie-age
       "name": "角色名",
       "role": "protagonist/antagonist/supporting/extra",
       "description": "外貌和身份简述（30字内）",
+      "appearance_hint": "详细外貌描述（性别、年龄、发色/发型、眼色、体型、肤色、标志性特征、服装风格，50-100字，尽量具体）",
       "personality": "性格特征（3-5个关键词+解释）",
       "arc": "角色在故事中的变化弧线"
     }
